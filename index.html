@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
-    <!-- Font Awesome 6 (ícones profissionais) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     
     <!-- SEO & Robots -->
@@ -805,220 +805,196 @@
             cursor: pointer;
         }
 
-        /* ========== FOOTER ESTILO APPLE/MAC PROFISSIONAL ========== */
-        footer {
+        /* ========== NOVO FOOTER ANIMADO & PULSANTE ========== */
+        .footer-wrapper {
+            position: relative;
+            margin-top: 6rem;
+            overflow: hidden;
+            background-color: #030002;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mesh Gradient animado (Efeito Shader) */
+        .footer-mesh-bg {
+            position: absolute;
+            inset: -20%;
+            z-index: 0;
+            opacity: 0.5;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 30, 92, 0.25), transparent 40%),
+                radial-gradient(circle at 80% 30%, rgba(217, 4, 41, 0.2), transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(199, 154, 46, 0.15), transparent 40%);
+            filter: blur(40px);
+            animation: meshBreath 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes meshBreath {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+            50% { transform: scale(1.1) translate(3%, -3%); opacity: 0.7; }
+            100% { transform: scale(1) translate(-3%, 3%); opacity: 0.3; }
+        }
+
+        /* Dot orbit (Grid pulsante) */
+        .footer-dots {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+            animation: dotsPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes dotsPulse {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+
+        /* Scanline / Wireframe effect */
+        .footer-scanline {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.02) 2px,
+                rgba(255, 255, 255, 0.02) 4px
+            );
+            pointer-events: none;
+        }
+
+        .footer-inner {
             position: relative;
             z-index: 10;
-            background: rgba(10, 1, 8, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3rem 0 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Grid principal do footer - 4 colunas estilo Apple */
-        .footer-grid {
+            padding: 5rem 2rem 3rem;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
         }
 
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-grid {
+        @media (max-width: 900px) {
+            .footer-inner {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
         }
 
-        .footer-col h4 {
+        .footer-col-clean h4 {
+            font-family: "Inter", sans-serif;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 1.25rem;
-        }
-
-        .footer-col p {
-            font-size: 0.875rem;
-            color: rgba(179, 160, 201, 0.7);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        /* Links do ecossistema - botões minimalistas estilo Apple */
-        .ecosystem-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .footer-link-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.875rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
-            color: #e0d4f0;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .footer-link-btn i {
-            font-size: 0.875rem;
-            color: #c79a2e;
-        }
-
-        .footer-link-btn:hover {
-            background: rgba(139, 30, 92, 0.3);
-            border-color: rgba(199, 154, 46, 0.4);
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        /* Redes sociais - botões circulares minimalistas */
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .social-icon-btn {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            color: #e0d4f0;
-            text-decoration: none;
-            font-size: 1.125rem;
-            transition: all 0.2s ease;
+            letter-spacing: 0.15em;
+            color: #fff;
+            margin-bottom: 1.5rem;
             position: relative;
+            display: inline-block;
         }
-
-        /* Tooltip estilo Apple */
-        .social-icon-btn::before,
-        .footer-link-btn::before {
-            content: attr(data-tooltip);
+        
+        .footer-col-clean h4::after {
+            content: "";
             position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-8px);
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 500;
-            padding: 0.25rem 0.6rem;
-            border-radius: 8px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.2s ease;
-            pointer-events: none;
-            font-family: "Inter", sans-serif;
-            letter-spacing: normal;
-            z-index: 100;
+            left: 0;
+            bottom: -0.5rem;
+            width: 20px;
+            height: 1px;
+            background: #d90429;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-col-clean:hover h4::after {
+            width: 100%;
         }
 
-        .social-icon-btn:hover::before,
-        .footer-link-btn:hover::before {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(-12px);
+        .footer-col-clean p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            max-width: 400px;
         }
 
-        .social-icon-btn:hover {
-            background: rgba(139, 30, 92, 0.3);
-            border-color: rgba(199, 154, 46, 0.5);
-            transform: translateY(-2px);
-            color: #c79a2e;
-        }
-
-        .social-icon-btn.youtube:hover {
-            background: rgba(255, 0, 0, 0.2);
-            color: #ff0000;
-        }
-
-        .social-icon-btn.spotify:hover {
-            background: rgba(30, 215, 96, 0.2);
-            color: #1DB954;
-        }
-
-        /* Frase mística */
-        .footer-phrase-col {
-            text-align: center;
+        .footer-clean-links {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 1rem;
         }
 
-        .footer-phrase {
+        .footer-clean-link {
+            color: rgba(179, 160, 201, 0.8);
+            text-decoration: none;
             font-size: 0.875rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-clean-link::before {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: #c79a2e;
+            margin-right: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-clean-link:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .footer-clean-link:hover::before {
+            width: 12px;
+            margin-right: 8px;
+        }
+
+        .footer-phrase-clean {
+            margin-top: 2rem;
+            font-size: 1rem;
             color: #c79a2e;
             font-style: italic;
             font-family: "Cormorant Garamond", serif;
             line-height: 1.6;
-            background: rgba(199, 154, 46, 0.08);
-            padding: 1rem;
-            border-radius: 20px;
-            border: 1px solid rgba(199, 154, 46, 0.15);
+            border-left: 2px solid #8b1e5c;
+            padding-left: 1.25rem;
+            background: linear-gradient(90deg, rgba(139, 30, 92, 0.1) 0%, transparent 100%);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
         }
 
-        /* Footer bottom */
-        .footer-bottom {
+        .footer-bottom-clean {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: rgba(179, 160, 201, 0.4);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
-        .footer-bottom-left {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-closing {
-            font-family: "Cormorant Garamond", serif;
-            font-style: italic;
+        .footer-closing-text {
             color: #c79a2e;
+            font-style: italic;
+            font-family: "Cormorant Garamond", serif;
+            text-transform: none;
+            font-size: 1rem;
+            letter-spacing: normal;
         }
 
         @media (max-width: 640px) {
-            .footer-bottom {
+            .footer-bottom-clean {
                 flex-direction: column;
                 text-align: center;
-            }
-            .footer-bottom-left {
-                justify-content: center;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -1036,8 +1012,7 @@
     <!-- HERO SECTION -->
     <header>
         <div class="hero-overlay"></div>
-        <div class="hero-bg" style="background-image: url('
-https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Cavpa%20(4).jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Cavpa%20(4).jpeg')"></div>
         
         <div class="hero-content">
             <div class="hero-sigil">
@@ -1126,60 +1101,53 @@ https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ca
         </div>
     </div>
 
-    <!-- FOOTER ESTILO APPLE PROFISSIONAL -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Coluna 1: Marca -->
-                <div class="footer-col">
-                    <h4>PORTAL VISCERAL</h4>
-                    <p>Direção de arte por Alexia Melusine. Um espaço dedicado à desmistificação e reverência do sagrado feminino nas encruzilhadas do tempo.</p>
-                </div>
+    <!-- NOVO FOOTER ANIMADO / PROFISSIONAL / SEM ÍCONES -->
+    <footer class="footer-wrapper">
+        <!-- Elementos do background animado -->
+        <div class="footer-mesh-bg"></div>
+        <div class="footer-dots"></div>
+        <div class="footer-scanline"></div>
+        
+        <div class="footer-inner">
+            <!-- Coluna 1: Marca & Frase Dinâmica -->
+            <div class="footer-col-clean">
+                <h4>PORTAL VISCERAL</h4>
+                <p>Direção de arte por Alexia Melusine. Um espaço dedicado à desmistificação e reverência do sagrado feminino nas encruzilhadas do tempo.</p>
+                <div id="footerPhrase" class="footer-phrase-clean"></div>
+            </div>
 
-                <!-- Coluna 2: Ecossistema / Portais (botões minimalistas com tooltip) -->
-                <div class="footer-col">
-                    <h4>ECOSSISTEMA</h4>
-                    <div class="ecosystem-links">
-                        <a href="https://pombagiras.com/mobile/" target="_blank" class="footer-link-btn" data-tooltip="Portal Mobile"><i class="fas fa-mobile-alt"></i> Mobile</a>
-                        <a href="https://pombagiras.com/vortex/" target="_blank" class="footer-link-btn" data-tooltip="Portal Vortex"><i class="fas fa-vortex"></i> Vortex</a>
-                        <a href="https://pombagiras.com/guardias/" target="_blank" class="footer-link-btn" data-tooltip="Guardias"><i class="fas fa-shield-alt"></i> Guardias</a>
-                        <a href="https://pombagiras.com/github/" target="_blank" class="footer-link-btn" data-tooltip="GitHub"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://pombagiras.com/lebaras/" target="_blank" class="footer-link-btn" data-tooltip="Lebaras"><i class="fas fa-bolt"></i> Lebaras</a>
-                        <a href="https://pombagiras.com/alexiamelusine/" target="_blank" class="footer-link-btn" data-tooltip="Alexia Melusine"><i class="fas fa-rose"></i> Melusine</a>
-                        <a href="https://t.me/pomba_giras" target="_blank" class="footer-link-btn" data-tooltip="Telegram"><i class="fab fa-telegram"></i> Telegram</a>
-                        <a href="https://discord.gg/gWZP8R7Dqu" target="_blank" class="footer-link-btn" data-tooltip="Discord"><i class="fab fa-discord"></i> Discord</a>
-                    </div>
-                </div>
-
-                <!-- Coluna 3: Redes Sociais (botões circulares com tooltip Apple) -->
-                <div class="footer-col">
-                    <h4>REDES SOCIAIS</h4>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="social-icon-btn" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@almasdepombagira" target="_blank" class="social-icon-btn youtube" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@almasdepombagira" target="_blank" class="social-icon-btn" data-tooltip="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.facebook.com/almasdepombagira/" target="_blank" class="social-icon-btn" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="social-icon-btn" data-tooltip="Kwai"><i class="fas fa-video"></i></a>
-                        <a href="https://www.threads.com/@almasdepombagira" target="_blank" class="social-icon-btn" data-tooltip="Threads"><i class="fab fa-threads"></i></a>
-                        <a href="https://substack.com/@alexiamelusine" target="_blank" class="social-icon-btn" data-tooltip="Substack"><i class="fas fa-envelope"></i></a>
-                        <a href="https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ" target="_blank" class="social-icon-btn spotify" data-tooltip="Spotify"><i class="fab fa-spotify"></i></a>
-                        <a href="https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW" target="_blank" class="social-icon-btn spotify" data-tooltip="Spotify 2"><i class="fas fa-podcast"></i></a>
-                    </div>
-                </div>
-
-                <!-- Coluna 4: Frase mística -->
-                <div class="footer-col footer-phrase-col">
-                    <div class="footer-phrase" id="footerPhrase"></div>
+            <!-- Coluna 2: Ecossistema / Portais (Links textuais profissionais) -->
+            <div class="footer-col-clean">
+                <h4>ECOSSISTEMA</h4>
+                <div class="footer-clean-links">
+                    <a href="https://pombagiras.com/mobile/" target="_blank" class="footer-clean-link">Portal Mobile</a>
+                    <a href="https://pombagiras.com/vortex/" target="_blank" class="footer-clean-link">Portal Vortex</a>
+                    <a href="https://pombagiras.com/guardias/" target="_blank" class="footer-clean-link">Guardias da Noite</a>
+                    <a href="https://pombagiras.com/github/" target="_blank" class="footer-clean-link">Repositório Oficial</a>
+                    <a href="https://pombagiras.com/lebaras/" target="_blank" class="footer-clean-link">Portal Lebaras</a>
+                    <a href="https://pombagiras.com/alexiamelusine/" target="_blank" class="footer-clean-link">Alexia Melusine</a>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <div class="footer-bottom-left">
-                    <span>Luz de Ferro & Rosa de Fogo © <span id="year"></span></span>
-                    <span>Projeto estético e informativo sem fins lucrativos</span>
+            <!-- Coluna 3: Redes Sociais (Links textuais profissionais) -->
+            <div class="footer-col-clean">
+                <h4>CONEXÕES</h4>
+                <div class="footer-clean-links">
+                    <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="footer-clean-link">Instagram Oficial</a>
+                    <a href="https://www.youtube.com/@almasdepombagira" target="_blank" class="footer-clean-link">Canal do YouTube</a>
+                    <a href="https://www.tiktok.com/@almasdepombagira" target="_blank" class="footer-clean-link">Conteúdo TikTok</a>
+                    <a href="https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ" target="_blank" class="footer-clean-link">Podcast Spotify</a>
+                    <a href="https://t.me/pomba_giras" target="_blank" class="footer-clean-link">Grupo Telegram</a>
+                    <a href="https://discord.gg/gWZP8R7Dqu" target="_blank" class="footer-clean-link">Comunidade Discord</a>
+                    <a href="https://substack.com/@alexiamelusine" target="_blank" class="footer-clean-link">Newsletter Substack</a>
                 </div>
-                <div class="footer-closing">"Laroyé, Pombagira! Salve a sua força."</div>
             </div>
+        </div>
+
+        <!-- Parte Inferior -->
+        <div class="footer-bottom-clean">
+            <div>LUZ DE FERRO & ROSA DE FOGO © <span id="year"></span> | PROJETO SEM FINS LUCRATIVOS</div>
+            <div class="footer-closing-text">"Laroyé, Pombagira! Salve a sua força."</div>
         </div>
     </footer>
 
