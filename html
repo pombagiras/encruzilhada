@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Portal Visceral - Pombagiras.com</title>
+    
+    <!-- Preconnect e Preload de Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome 6 (ícones profissionais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- SEO & Robots -->
+    <meta name="description" content="Explore o mistério, a sabedoria e a força das Pombagiras no Portal Visceral de Alexia Melusine. Perguntas frequentes, curiosidades, glossário e as falanges sagradas." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pombagiras.com/" />
+    <meta property="og:title" content="Portal Visceral - Pombagiras.com" />
+    <meta property="og:description" content="Explore o mistério, a sabedoria e a força das Pombagiras no Portal Visceral de Alexia Melusine." />
+    <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663710637789/RLpTrZmdyPqLbmY8V79suP/hero-bg-Xgbi9cpDzTv4uV5L6zfv7d.webp" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://pombagiras.com/" />
+    <meta property="twitter:title" content="Portal Visceral - Pombagiras.com" />
+    <meta property="twitter:description" content="Explore o mistério, a sabedoria e a força das Pombagiras no Portal Visceral de Alexia Melusine." />
+    <meta property="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663710637789/RLpTrZmdyPqLbmY8V79suP/hero-bg-Xgbi9cpDzTv4uV5L6zfv7d.webp" />
+
+    <!-- Internacionalização -->
+    <link rel="alternate" hreflang="pt-BR" href="https://pombagiras.com/" />
+    <link rel="alternate" hreflang="en" href="https://pombagiras.com/en" />
+    <link rel="alternate" hreflang="es" href="https://pombagiras.com/es" />
+    <link rel="alternate" hreflang="x-default" href="https://pombagiras.com/" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://pombagiras.com/#website",
+                "url": "https://pombagiras.com/",
+                "name": "Pombagiras.com",
+                "description": "Portal Visceral sobre o mistério e poder das Pombagiras"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://pombagiras.com/#organization",
+                "name": "Portal Visceral",
+                "url": "https://pombagiras.com/"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://pombagiras.com/#person",
+                "name": "Alexia Melusine",
+                "jobTitle": "Diretora de Arte"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", "Montserrat", sans-serif;
+            background-color: #0a0108;
+            color: #f5f0ff;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(139, 30, 92, 0.15) 0%, transparent 40%), 
+                radial-gradient(circle at 80% 70%, rgba(217, 4, 41, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        ::selection {
+            background-color: #8b1e5c;
+            color: #f5f0ff;
+        }
+
+        /* SCROLLBAR - estilo Apple */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(139, 30, 92, 0.5);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d90429;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .animate-modal-in {
+            animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* GLASS CARD */
+        .glass-card {
+            background: rgba(25, 10, 20, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(199, 154, 46, 0.3);
+            box-shadow: 0 12px 40px 0 rgba(139, 30, 92, 0.25);
+        }
+
+        /* BOTÕES */
+        .btn-visceral-primary {
+            background: linear-gradient(135deg, #8b1e5c 0%, #d90429 100%);
+            color: #f5f0ff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-visceral-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(217, 4, 41, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .btn-visceral-outline {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: #f5f0ff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-visceral-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #c79a2e;
+            color: #c79a2e;
+            transform: translateY(-2px);
+        }
+
+        /* HEADER / HERO */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 1rem;
+            z-index: 10;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 1, 8, 0.3), rgba(10, 1, 8, 0.7), #0a0108);
+            z-index: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            max-width: 56rem;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-sigil {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .hero-sigil-glow {
+            position: absolute;
+            inset: 0;
+            background: rgba(139, 30, 92, 0.4);
+            border-radius: 50%;
+            filter: blur(60px);
+            transition: all 0.5s ease;
+        }
+
+        .hero-sigil:hover .hero-sigil-glow {
+            background: rgba(217, 4, 41, 0.4);
+        }
+
+        .hero-sigil img {
+            width: 144px;
+            height: 144px;
+            border-radius: 50%;
+            border: 1px solid rgba(199, 154, 46, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+            transition: transform 0.7s ease;
+            object-fit: cover;
+        }
+
+        .hero-sigil:hover img {
+            transform: rotate(180deg);
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: #c79a2e;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-tag-dot {
+            width: 0.375rem;
+            height: 0.375rem;
+            border-radius: 50%;
+            background: #d90429;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, white, #ff4d6d, #8b1e5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: #b3a0c9;
+            max-width: 32rem;
+            font-family: "Cormorant Garamond", serif;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 28rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .hero-buttons button,
+        .hero-buttons a {
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons button,
+            .hero-buttons a {
+                width: auto;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: rgba(179, 160, 201, 0.5);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* FLOATING SOCIAL MENU */
+        .floating-menu {
+            position: fixed;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .floating-menu {
+                position: fixed;
+                bottom: 1.5rem;
+                right: 50%;
+                top: auto;
+                transform: translateX(50%);
+                flex-direction: row;
+            }
+        }
+
+        .social-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #f5f0ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+
+        .social-btn:hover {
+            background: rgba(139, 30, 92, 0.3);
+            border-color: rgba(199, 154, 46, 0.3);
+            color: #c79a2e;
+            transform: scale(1.1);
+        }
+
+        .scroll-top-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #c79a2e;
+            color: #0a0108;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.25rem;
+        }
+
+        .scroll-top-btn.show {
+            display: flex;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            position: relative;
+            z-index: 10;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        /* INTRO SECTION */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        @media (min-width: 1024px) {
+            .intro-grid {
+                grid-template-columns: 1.4fr 1fr;
+            }
+        }
+
+        .intro-text h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .intro-text h2::after {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #c79a2e 0%, transparent 100%);
+            transition: width 0.4s ease;
+        }
+
+        .intro-text p {
+            font-size: 1rem;
+            color: #b3a0c9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-note {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            background: rgba(139, 30, 92, 0.1);
+            border: 1px solid rgba(139, 30, 92, 0.2);
+        }
+
+        .intro-image {
+            position: relative;
+        }
+
+        .intro-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* PORTAL SECTION */
+        .portal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .portal-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* TABS */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 0.875rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
+            color: #b3a0c9;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tab-btn.active {
+            background: #8b1e5c;
+            color: white;
+            border-color: rgba(199, 154, 46, 0.4);
+        }
+
+        .tab-content {
+            min-height: 400px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* ENTITY GRID */
+        .entity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .entity-card {
+            padding: 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .entity-card-bottom-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, #8b1e5c, #d90429);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            transform-origin: left;
+        }
+
+        .entity-card:hover .entity-card-bottom-line {
+            transform: scaleX(1);
+        }
+
+        .entity-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .entity-card:hover .entity-name {
+            color: #c79a2e;
+        }
+
+        .entity-title {
+            font-size: 0.75rem;
+            color: #b3a0c9;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .entity-description {
+            font-size: 0.875rem;
+            color: rgba(179, 160, 201, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 56rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #b3a0c9;
+        }
+
+        /* CURIOSITIES & GLOSSARY */
+        .curiosity-grid, .glossary-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .curiosity-card, .glossary-item {
+            padding: 1.5rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 100%;
+            max-width: 56rem;
+            background: #0a0108;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ========== FOOTER ESTILO APPLE/MAC PROFISSIONAL ========== */
+        footer {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 1, 8, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Grid principal do footer - 4 colunas estilo Apple */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-col h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p {
+            font-size: 0.875rem;
+            color: rgba(179, 160, 201, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Links do ecossistema - botões minimalistas estilo Apple */
+        .ecosystem-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .footer-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.875rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            color: #e0d4f0;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .footer-link-btn i {
+            font-size: 0.875rem;
+            color: #c79a2e;
+        }
+
+        .footer-link-btn:hover {
+            background: rgba(139, 30, 92, 0.3);
+            border-color: rgba(199, 154, 46, 0.4);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Redes sociais - botões circulares minimalistas */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .social-icon-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: #e0d4f0;
+            text-decoration: none;
+            font-size: 1.125rem;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        /* Tooltip estilo Apple */
+        .social-icon-btn::before,
+        .footer-link-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            pointer-events: none;
+            font-family: "Inter", sans-serif;
+            letter-spacing: normal;
+            z-index: 100;
+        }
+
+        .social-icon-btn:hover::before,
+        .footer-link-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-12px);
+        }
+
+        .social-icon-btn:hover {
+            background: rgba(139, 30, 92, 0.3);
+            border-color: rgba(199, 154, 46, 0.5);
+            transform: translateY(-2px);
+            color: #c79a2e;
+        }
+
+        .social-icon-btn.youtube:hover {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+        }
+
+        .social-icon-btn.spotify:hover {
+            background: rgba(30, 215, 96, 0.2);
+            color: #1DB954;
+        }
+
+        /* Frase mística */
+        .footer-phrase-col {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer-phrase {
+            font-size: 0.875rem;
+            color: #c79a2e;
+            font-style: italic;
+            font-family: "Cormorant Garamond", serif;
+            line-height: 1.6;
+            background: rgba(199, 154, 46, 0.08);
+            padding: 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(199, 154, 46, 0.15);
+        }
+
+        /* Footer bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.7rem;
+            color: rgba(179, 160, 201, 0.4);
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-closing {
+            font-family: "Cormorant Garamond", serif;
+            font-style: italic;
+            color: #c79a2e;
+        }
+
+        @media (max-width: 640px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom-left {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- FLOATING SOCIAL MENU -->
+    <nav class="floating-menu">
+        <a href="https://instagram.com/almasdepombagira" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@almasdepombagira" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <button class="social-btn" onclick="sharePortal()" title="Partilhar"><i class="fas fa-share-alt"></i></button>
+        <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="hero-overlay"></div>
+        <div class="hero-bg" style="background-image: url('
+https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Cavpa%20(4).jpeg')"></div>
+        
+        <div class="hero-content">
+            <div class="hero-sigil">
+                <div class="hero-sigil-glow"></div>
+                <img src="https://rbygxkbewzknvjjhxdvw.supabase.co/storage/v1/object/public/fotos-horiz/B%20(1).png" alt="Sigilo Sagrado Pombagira" />
+            </div>
+
+            <div class="hero-tag">
+                <span class="hero-tag-dot"></span>
+                Direção de Arte: Alexia Melusine
+            </div>
+
+            <h1>POMBAGIRAS.COM</h1>
+
+            <p class="hero-subtitle">
+                "Nas encruzilhadas do tempo, sob a luz de ferro e a rosa de fogo, reside o poder indomável do sagrado feminino."
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#portal" class="btn-visceral-primary">
+                    🔥 Entrar no Portal
+                </a>
+                <button class="btn-visceral-outline" onclick="scrollToFAQ()">
+                    ❓ Esclarecer Dúvidas
+                </button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Deslizar</span>
+            <span>⬇️</span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="intro-grid">
+            <div class="intro-text">
+                <h2>O Sagrado Feminino Abissal</h2>
+                <p>O culto e a reverência às Pombagiras representam um dos aspetos mais viscerais e libertadores da espiritualidade. Elas não são demónios nem figuras de submissão; são as <strong>Rainhas da Noite</strong>, as detentoras do livre-arbítrio, da paixão e do equilíbrio dinâmico do universo.</p>
+                <p>Sob a regência de <strong>Alexia Melusine</strong>, este espaço foi erguido como um farol de conhecimento puro, despido de preconceitos dogmáticos e focado na verdade espiritual que reside na força de cada falange.</p>
+                <div class="intro-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>Nota de Respeito:</strong> Toda informação contida neste portal é fundamentada na tradição e no respeito litúrgico.</p>
+                </div>
+            </div>
+            
+            <div class="intro-image">
+                <div class="intro-image-wrapper">
+                    <img src="https://rbygxkbewzknvjjhxdvw.supabase.co/storage/v1/object/public/fotos-horiz/Ale-Escrita-Forte.png" alt="Altar de Oferendas Portal Visceral" />
+                </div>
+            </div>
+        </section>
+
+        <section id="portal">
+            <div class="portal-header">
+                <h2>Navegação do Portal</h2>
+                <p>Selecione uma das abas abaixo para desvelar os mistérios.</p>
+            </div>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab('pombagiras')">🔥 As Pombagiras</button>
+                <button class="tab-btn" onclick="switchTab('faq')">❓ Perguntas & Respostas</button>
+                <button class="tab-btn" onclick="switchTab('curiosidades')">✨ Curiosidades</button>
+                <button class="tab-btn" onclick="switchTab('glossario')">📖 Glossário Sagrado</button>
+            </div>
+
+            <div id="pombagiras" class="tab-content active"><div class="entity-grid" id="entityGrid"></div></div>
+            <div id="faq" class="tab-content"><div class="faq-container" id="faqContainer"></div></div>
+            <div id="curiosidades" class="tab-content"><div class="curiosity-grid" id="curiosityGrid"></div></div>
+            <div id="glossario" class="tab-content"><div class="glossary-container" id="glossaryContainer"></div></div>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="entityModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-element" id="modalElement"></div>
+                <h3 class="modal-title" id="modalName"></h3>
+                <p class="modal-subtitle" id="modalTitle"></p>
+            </div>
+            <div class="modal-section"><div class="modal-section-label">Descrição Espiritual</div><div class="modal-section-text" id="modalDescription"></div></div>
+            <div class="modal-offering"><div class="modal-section-label">Oferenda Litúrgica</div><div class="modal-section-text" id="modalOffering"></div></div>
+        </div>
+    </div>
+
+    <!-- FOOTER ESTILO APPLE PROFISSIONAL -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Coluna 1: Marca -->
+                <div class="footer-col">
+                    <h4>PORTAL VISCERAL</h4>
+                    <p>Direção de arte por Alexia Melusine. Um espaço dedicado à desmistificação e reverência do sagrado feminino nas encruzilhadas do tempo.</p>
+                </div>
+
+                <!-- Coluna 2: Ecossistema / Portais (botões minimalistas com tooltip) -->
+                <div class="footer-col">
+                    <h4>ECOSSISTEMA</h4>
+                    <div class="ecosystem-links">
+                        <a href="https://pombagiras.com/mobile/" target="_blank" class="footer-link-btn" data-tooltip="Portal Mobile"><i class="fas fa-mobile-alt"></i> Mobile</a>
+                        <a href="https://pombagiras.com/vortex/" target="_blank" class="footer-link-btn" data-tooltip="Portal Vortex"><i class="fas fa-vortex"></i> Vortex</a>
+                        <a href="https://pombagiras.com/guardias/" target="_blank" class="footer-link-btn" data-tooltip="Guardias"><i class="fas fa-shield-alt"></i> Guardias</a>
+                        <a href="https://pombagiras.com/github/" target="_blank" class="footer-link-btn" data-tooltip="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://pombagiras.com/lebaras/" target="_blank" class="footer-link-btn" data-tooltip="Lebaras"><i class="fas fa-bolt"></i> Lebaras</a>
+                        <a href="https://pombagiras.com/alexiamelusine/" target="_blank" class="footer-link-btn" data-tooltip="Alexia Melusine"><i class="fas fa-rose"></i> Melusine</a>
+                        <a href="https://t.me/pomba_giras" target="_blank" class="footer-link-btn" data-tooltip="Telegram"><i class="fab fa-telegram"></i> Telegram</a>
+                        <a href="https://discord.gg/gWZP8R7Dqu" target="_blank" class="footer-link-btn" data-tooltip="Discord"><i class="fab fa-discord"></i> Discord</a>
+                    </div>
+                </div>
+
+                <!-- Coluna 3: Redes Sociais (botões circulares com tooltip Apple) -->
+                <div class="footer-col">
+                    <h4>REDES SOCIAIS</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="social-icon-btn" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@almasdepombagira" target="_blank" class="social-icon-btn youtube" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@almasdepombagira" target="_blank" class="social-icon-btn" data-tooltip="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/almasdepombagira/" target="_blank" class="social-icon-btn" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="social-icon-btn" data-tooltip="Kwai"><i class="fas fa-video"></i></a>
+                        <a href="https://www.threads.com/@almasdepombagira" target="_blank" class="social-icon-btn" data-tooltip="Threads"><i class="fab fa-threads"></i></a>
+                        <a href="https://substack.com/@alexiamelusine" target="_blank" class="social-icon-btn" data-tooltip="Substack"><i class="fas fa-envelope"></i></a>
+                        <a href="https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ" target="_blank" class="social-icon-btn spotify" data-tooltip="Spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW" target="_blank" class="social-icon-btn spotify" data-tooltip="Spotify 2"><i class="fas fa-podcast"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 4: Frase mística -->
+                <div class="footer-col footer-phrase-col">
+                    <div class="footer-phrase" id="footerPhrase"></div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <span>Luz de Ferro & Rosa de Fogo © <span id="year"></span></span>
+                    <span>Projeto estético e informativo sem fins lucrativos</span>
+                </div>
+                <div class="footer-closing">"Laroyé, Pombagira! Salve a sua força."</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const entitiesData = [
+            { name: "Maria Padilha", title: "A Rainha das Sete Encruzilhadas", element: "Fogo e Terra", offering: "Rosas vermelhas, licor de menta, cigarros finos e espumante doce.", description: "Uma das entidades mais conhecidas e respeitadas. Elegante, altiva e de presença magnética, é mestre na resolução de conflitos amorosos, abertura de caminhos financeiros e resgate da autoestima feminina." },
+            { name: "Pombagira Cigana", title: "A Senhora do Destino e da Liberdade", element: "Ar e Fogo", offering: "Frutas doces, pão de ló, fitas coloridas, moedas douradas e vinho tinto.", description: "Traz a força do povo cigano, a magia das cartas, a liberdade e a intuição aguçada. É procurada para trazer prosperidade e clareza nas decisões." },
+            { name: "Pombagira das Almas", title: "A Guardiã dos Portais de Transmutação", element: "Terra e Água", offering: "Velas brancas e roxas, rosas brancas, água mineral e licor.", description: "Atua nos campos santos e locais de transição espiritual. É uma entidade de profunda seriedade, focada na cura de depressões e no reequilíbrio kármico." },
+            { name: "Pombagira Sete Saias", title: "A Senhora das Sete Vibrações", element: "Ar e Terra", offering: "Adornos coloridos, espumante rosé, doces finos e perfumes florais.", description: "Cada uma das suas sete saias representa uma linha de atuação espiritual. É alegre, dinâmica e trabalha para desatar nós na vida amorosa." },
+            { name: "Pombagira Rainha", title: "A Soberana dos Tronos Espirituais", element: "Fogo e Ouro", offering: "Champanhe francesa, joias douradas, rosas vermelhas importadas.", description: "Representa a máxima autoridade e realeza. Trabalha com justiça, liderança e empoderamento pessoal." },
+            { name: "Maria Mulambo", title: "A Senhora da Humildade e do Resgate", element: "Terra e Água", offering: "Bebidas doces, cigarros, rosas vermelhas e farofa amarela.", description: "Conhecida pela sua extrema caridade. Resgata almas caídas, transmuta pobreza em riqueza espiritual." }
+        ];
+
+        const faqData = [
+            { question: "Quem é a Pombagira na espiritualidade?", answer: "A Pombagira é uma entidade espiritual de grande força. Representa o arquétipo da mulher livre, empoderada, senhora do seu próprio destino e guardiã das encruzilhadas." },
+            { question: "Qual a diferença entre Pombagira e Exu?", answer: "Enquanto Exu representa a energia masculina da comunicação, a Pombagira personifica a força feminina correspondente, ligada à inteligência emocional e ao amor-próprio." },
+            { question: "Como saudar uma Pombagira?", answer: "A saudação é 'Laroyé Pombagira!' ou 'Pombagira Mojubá!', que significa saudar a sua presença e prestar reverência." }
+        ];
+
+        const curiosityData = [
+            { title: "O Mistério das Sete Encruzilhadas", content: "O número sete é sagrado. A Pombagira das Sete Encruzilhadas rege as encruzilhadas físicas e espirituais da vida." },
+            { title: "A Simbologia da Rosa Vermelha", content: "A rosa vermelha é um condensador de energia vital. As pétalas representam expansão da alma, os espinhos simbolizam proteção." }
+        ];
+
+        const glossaryData = [
+            { term: "Laroyé", definition: "Saudação ritualística que significa 'olhe por mim' ou 'salve'.", category: "Saudações" },
+            { term: "Encruzilhada", definition: "Ponto sagrado onde as energias se encontram.", category: "Espaços" }
+        ];
+
+        const footerPhrases = [
+            "\"Quem teme o mistério da noite nunca compreenderá o brilho do dia.\" — Alexia Melusine",
+            "\"A força de uma mulher espiritualizada reside na sua capacidade de reinar sobre o seu próprio caos.\" — Rosa de Fogo",
+            "\"Laroyé é o eco da liberdade que ressoa nas encruzilhadas da eternidade.\"",
+            "\"A rosa tem espinhos não para ferir os inocentes, mas para avisar os tolos do seu valor.\""
+        ];
+
+        let currentPhraseIndex = 0;
+
+        function renderEntities() {
+            document.getElementById('entityGrid').innerHTML = entitiesData.map((e, i) => `
+                <div class="glass-card entity-card" onclick="openModal(${i})">
+                    <div class="entity-card-bottom-line"></div>
+                    <h3 class="entity-name">${e.name}</h3>
+                    <p class="entity-title">${e.title}</p>
+                    <p class="entity-description">${e.description.substring(0, 100)}...</p>
+                    <span class="entity-more">Saber mais →</span>
+                </div>
+            `).join('');
+        }
+
+        function renderFAQ() {
+            document.getElementById('faqContainer').innerHTML = faqData.map((f, i) => `
+                <div class="faq-item" id="faq-${i}">
+                    <button class="faq-question" onclick="toggleFAQ(${i})">${f.question}<i class="fas fa-chevron-down faq-chevron"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-content">${f.answer}</div></div>
+                </div>
+            `).join('');
+        }
+
+        function renderCuriosities() {
+            document.getElementById('curiosityGrid').innerHTML = curiosityData.map(c => `
+                <div class="glass-card curiosity-card"><h3>✨ ${c.title}</h3><p>${c.content}</p></div>
+            `).join('');
+        }
+
+        function renderGlossary() {
+            document.getElementById('glossaryContainer').innerHTML = glossaryData.map(g => `
+                <div class="glossary-item"><strong>${g.term}</strong><br>${g.definition}</div>
+            `).join('');
+        }
+
+        function toggleFAQ(i) { document.getElementById(`faq-${i}`).classList.toggle('open'); }
+        function openModal(i) { const e=entitiesData[i]; document.getElementById('modalElement').textContent=e.element; document.getElementById('modalName').textContent=e.name; document.getElementById('modalTitle').textContent=e.title; document.getElementById('modalDescription').textContent=e.description; document.getElementById('modalOffering').textContent=e.offering; document.getElementById('entityModal').classList.add('open'); }
+        function closeModal() { document.getElementById('entityModal').classList.remove('open'); }
+        function switchTab(tab) { document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.getElementById(tab).classList.add('active'); event.target.classList.add('active'); }
+        function scrollToFAQ() { document.getElementById('portal').scrollIntoView({behavior:'smooth'}); setTimeout(()=>{ document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active')); document.getElementById('faq').classList.add('active'); document.querySelector('.tab-btn:nth-child(2)').classList.add('active'); },100); }
+        function scrollToTop() { window.scrollTo({top:0,behavior:'smooth'}); }
+        function sharePortal() { if(navigator.share) navigator.share({title:'Portal Visceral',url:window.location.href}); else { navigator.clipboard.writeText(window.location.href); alert('Link copiado!'); } }
+        function updateFooterPhrase() { document.getElementById('footerPhrase').innerHTML = footerPhrases[currentPhraseIndex]; currentPhraseIndex = (currentPhraseIndex+1)%footerPhrases.length; }
+        function handleScroll() { document.getElementById('scrollTopBtn').classList.toggle('show', window.scrollY>400); }
+
+        window.addEventListener('load', () => { renderEntities(); renderFAQ(); renderCuriosities(); renderGlossary(); updateFooterPhrase(); setInterval(updateFooterPhrase,8000); window.addEventListener('scroll',handleScroll); document.getElementById('year').textContent=new Date().getFullYear(); });
+        document.getElementById('entityModal').addEventListener('click', e => { if(e.target===document.getElementById('entityModal')) closeModal(); });
+    </script>
+</body>
+</html>
